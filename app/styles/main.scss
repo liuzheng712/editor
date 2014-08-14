@@ -1,3 +1,24 @@
-h2{
-	color:gold;
+html,body{
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+body{
+	display:-webkit-box;
+	-webkit-box-orient:block-axis;
+}
+header,footer{
+	height: 50px;
+}
+.main{
+	-webkit-box-flex: 1;
+	display:-webkit-box;
+	aside{
+		width: 300px;
+	}
+	article{
+		-webkit-box-flex:1;
+		margin:0;
+		padding:0;
+	}
 }
