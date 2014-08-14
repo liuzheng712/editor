@@ -20,7 +20,7 @@ path =
 gulp.task 'scripts',->
   jsFilter = $.filter '{,**/}*.js'
   coffeeFilter = $.filter '{,**/}*.coffee'
-  scripts_path = '.tmp/scripts'
+  scripts_path = 'app/scripts'
   gulp.src(path.scripts)
     .pipe jsFilter
     .pipe $.changed scripts_path
@@ -35,7 +35,7 @@ gulp.task 'scripts',->
 
 
 gulp.task 'styles',->
-  styles_path = '.tmp/styles'
+  styles_path = 'app/styles'
   sassFilter = $.filter '{,**/}*.scss'
   gulp.src path.styles
     .pipe sassFilter
@@ -52,7 +52,7 @@ gulp.task 'html',->
 
 gulp.task 'connect',->
   connect.server {
-    root : ['app','.tmp'],
+    root : ['app'],
     livereload:true,
     port:9000
   }
@@ -88,7 +88,7 @@ gulp.task 'build',['clean','styles','scripts','fonts'],->
   cssFilter = $.filter '**/*.css'
 
   gulp.src 'app/*.html'
-    .pipe $.useref.assets {searchPath : '{.tmp,app}'}
+    .pipe $.useref.assets {searchPath : '{app}'}
     .pipe jsFilter
     .pipe uglify()
     .pipe jsFilter.restore()
