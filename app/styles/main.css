@@ -7,15 +7,33 @@ body {
   display: -webkit-box;
   -webkit-box-orient: block-axis; }
 
+header, footer, .main {
+  box-sizing: border-box; }
+
 header, footer {
   height: 50px; }
 
+header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+
 .main {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   -webkit-box-flex: 1;
   display: -webkit-box; }
   .main aside {
-    width: 300px; }
+    width: 250px;
+    box-sizing: border-box;
+    border-right: 1px solid rgba(0, 0, 0, 0.1); }
   .main article {
+    box-sizing: border-box;
     -webkit-box-flex: 1;
+    display: -webkit-box;
+    -webkit-box-orient: block-axis;
     margin: 0;
     padding: 0; }
+    .main article .title {
+      height: 41px; }
+    .main article .content {
+      -webkit-box-flex: 1; }
+      .main article .content textarea {
+        height: 100%; }
