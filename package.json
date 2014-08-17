@@ -4,7 +4,7 @@
   "description": "a scaffold of front-end by pmz",
   "main": "app/index.html",
   "window" : {
-    "toolbar" : false,
+    "toolbar" : true,
     "icon" : "app/favicon.ico"
     },
   "toolbar" : "false",

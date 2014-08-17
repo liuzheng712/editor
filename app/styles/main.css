@@ -25,9 +25,14 @@ header, .main {
     border-right: 1px solid rgba(0, 0, 0, 0.1);
     background: #f6f7f9;
     font-size: 12px; }
+    .main aside .ui.list .ui.list {
+      padding: 0;
+      padding-left: 1em; }
     .main aside .ui.list .item {
       color: #162029;
       cursor: pointer; }
+    .main aside .ui.list .item > .icon.right ~ .list {
+      display: none; }
     .main aside .ui.list .item > .icon {
       margin-right: 0;
       width: 15px;

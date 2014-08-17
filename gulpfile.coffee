@@ -60,7 +60,7 @@ gulp.task 'connect',->
 gulp.task 'watch' , ->
   gulp.watch path.scripts , ['scripts']
   gulp.watch path.styles  , ['styles']
-  gulp.watch 'bower.json' , ['wiredep']
+  #gulp.watch 'bower.json' , ['wiredep']
   gulp.watch 'app/*.html' , ['html']
 
 gulp.task 'clean' , (cb)->
