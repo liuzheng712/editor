@@ -1,1 +1,1 @@
-console.log 'this is a web framework by pmz,enjoy it'
+#CKEDITOR.replace( 'ckeditor' )

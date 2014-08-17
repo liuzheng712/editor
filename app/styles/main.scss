@@ -3,19 +3,17 @@ html,body{
 	margin: 0;
 	padding: 0;
 }
+
+a{
+	text-decoration: none
+}
+
 body{
 	display:-webkit-box;
 	-webkit-box-orient:block-axis;
 }
-header,footer,.main{
+header,.main{
 	box-sizing: border-box;
-}
-
-header,footer{
-	height: 50px;
-}
-header{
-	border-bottom: 1px solid rgba(0,0,0,.1);
 }
 
 .main{
@@ -23,9 +21,23 @@ header{
 	-webkit-box-flex: 1;
 	display:-webkit-box;
 	aside{
-		width: 250px;
+		width: 200px;
 		box-sizing: border-box;
+		padding: 2px 0 0 4px;
+		overflow: auto;
 		border-right: 1px solid rgba(0,0,0,.1);
+		background: #f6f7f9;
+		font-size: 12px;
+
+		.ui.list .item{
+			color: #162029;
+			cursor: pointer;
+		}
+		.ui.list .item > .icon{
+			margin-right: 0;
+			width: 15px;
+			height: 12px;
+		}
 	}
 	article{
 		box-sizing: border-box;
@@ -35,13 +47,12 @@ header{
 		-webkit-box-orient:block-axis;
 		margin:0;
 		padding:0;
-		.title{
-			height: 41px;
-		}
 		.content{
 			-webkit-box-flex:1;
 			textarea{
 				height: 100%;
+				display: block;
+				max-height: 100%;
 			}
 		}
 	}

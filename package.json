@@ -5,7 +5,7 @@
   "main": "app/index.html",
   "window" : {
     "toolbar" : false,
-    "icon" : "avatar.gif"
+    "icon" : "app/favicon.ico"
     },
   "toolbar" : "false",
   "devDependencies": {
