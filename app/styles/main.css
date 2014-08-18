@@ -37,16 +37,13 @@ header, .main {
       margin-right: 0;
       width: 15px;
       height: 12px; }
-  .main article {
+  .main #article {
     box-sizing: border-box;
     -webkit-box-flex: 1;
     display: -webkit-box;
     -webkit-box-orient: block-axis;
     margin: 0;
     padding: 0; }
-    .main article .content {
-      -webkit-box-flex: 1; }
-      .main article .content textarea {
-        height: 100%;
-        display: block;
-        max-height: 100%; }
+    .main #article .content {
+      -webkit-box-flex: 1;
+      margin: 0; }

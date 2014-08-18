@@ -1,7 +1,9 @@
 (function() {
-  var Catalog, fs, generateCatalog;
+  var Catalog, fs, generateCatalog, path;
 
   fs = require('fs');
+
+  path = require('path');
 
   generateCatalog = function(path) {
     var html, item, list, stats, subpath, _i, _len;
@@ -23,7 +25,7 @@
   Catalog = (function() {
     function Catalog(wrap, root) {
       if (root == null) {
-        root = editor.config.workplace;
+        root = editor.workplace;
       }
       this.wrap = $(wrap);
       this.root = root;
@@ -35,12 +37,21 @@
       html = generateCatalog(this.root);
       this.wrap.html(html);
       return this.wrap.delegate('.item', 'click', function() {
-        var $i;
+        var $i, content, filename, filepath;
         $i = $(this).find('i:first');
         if ($i.hasClass('right')) {
           $i.removeClass('right').addClass('down');
         } else if ($i.hasClass('down')) {
           $i.removeClass('down').addClass('right');
+        } else {
+          filepath = $(this).data('path');
+          filename = path.basename(filepath);
+          content = fs.readFileSync(filepath, {
+            encoding: "utf-8"
+          });
+          editor.ckeditor.setData(content);
+          $('#title').val(filename);
+          editor.current = filepath;
         }
         return false;
       });

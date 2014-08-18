@@ -1,20 +1,19 @@
-ckeditor = CKEDITOR.replace( 'ckeditor' , {
-	# extraPlugins: 'autogrow'
-	# autoGrow_maxHeight: 10000
-	# removePlugins: 'resize'
-} )
-
-ckeditor.on 'instanceReady' , (event)->
-	editor = event.editor
-	setTimeout ->
-		if !editor.element
-			setTimeout arguments.callee,100
-			return
-		event.removeListener 'instanceReady' , this.callee
-		debugger
-		if editor.name == 'ckeditor'
-			editor.resize( editor.container.getStyle( 'width' ), CKEDITOR.document.getById( 'cke_1_contents' ).getParent().$.offsetHeight )
-	,0
-,null,null,9999
+fs = require 'fs'
 
 new editor.Catalog '#catalog'
+
+$('#save').on 'click' , ->
+	if editor.current == null
+		# ...
+	else
+		fs.writeFileSync(editor.current, editor.ckeditor.getData())
+		editor.changed = false
+
+	
+$('#close').on 'click',->
+	if !editor.changed 
+		editor.current = null
+		editor.ckeditor.setData ''
+		$('#title').val ''
+	else
+		alert 'has changed'

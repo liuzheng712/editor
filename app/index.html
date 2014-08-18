@@ -21,16 +21,18 @@
 	<body>
 	<header>
 		<div class="ui menu teal inverted">
-			<a href="#" class="item"><i class="add icon"></i>新建</a>
-			<a href="#" class="item"><i class="delete icon"></i>删除</a>
-			<a href="#" class="item"><i class="setting icon"></i>设置</a>
+			<a href="#" class="item" id="add"><i class="add icon"></i>新建</a>
+			<a href="#" class="item" id="delete"><i class="delete icon"></i>删除</a>
+			<a href="#" class="item" id="setting"><i class="setting icon"></i>设置</a>
 
 			<div class="item ui form">
 				<div class="ui icon input">	
-					<input type="text" placeholder="title...">
+					<input type="text" id="title" placeholder="title...">
       				<i class="title icon"></i>
 				</div>
 			</div>
+			<a href="#" class="item" id="save"><i class="save icon"></i>保存</a>
+			<a href="#" class="item" id="close"><i class="close icon"></i>关闭</a>
 		</div>
 	</header>
 	<div class="main">
@@ -47,7 +49,7 @@
 				</a>
 	        </div> -->
 		</aside>
-		<article class="ui form">
+		<article class="ui form" id="article">
 
 			<section class="field content">		
 				 <textarea id="ckeditor"></textarea>
@@ -67,7 +69,8 @@
 <!-- build:js scripts/main.js -->
 <script type="text/javascript" src="plugins/ckeditor/ckeditor.js"></script>
 <script type="text/javascript" src="plugins/ckeditor/plugins/codesnippet/lib/highlight/highlight.pack.js"></script>
-<script type="text/javascript" src="scripts/config.js"></script>
+<script type="text/javascript" src="scripts/editor.js"></script>
+<script type="text/javascript" src="scripts/ckeditor.js"></script>
 <script type="text/javascript" src="scripts/catalog.js"></script>
 <script type="text/javascript" src="scripts/main.js"></script>
 <!-- endbuild -->

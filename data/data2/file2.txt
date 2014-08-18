@@ -1,0 +1,1 @@
+<p>我亲爱的佳琦，我爱你~<img alt="heart" src="file:///F:/pmz/node/editor/app/plugins/ckeditor/plugins/smiley/images/heart.png" style="height:23px; width:23px" title="heart" /></p>

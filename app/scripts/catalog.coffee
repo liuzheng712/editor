@@ -1,4 +1,5 @@
 fs = require 'fs'
+path = require 'path'
 
 generateCatalog = (path)->
 	html = '<div class="ui list link">'
@@ -13,7 +14,7 @@ generateCatalog = (path)->
 	html
 
 class Catalog
-	constructor : (wrap,root = editor.config.workplace)->
+	constructor : (wrap,root = editor.workplace)->
 		this.wrap = $(wrap)
 		this.root = root
 		this.generate()
@@ -27,8 +28,13 @@ class Catalog
 				$i.removeClass('right').addClass('down')
 			else if $i.hasClass 'down'
 				$i.removeClass('down').addClass('right')
+			else
+				filepath = $(this).data 'path'
+				filename = path.basename filepath
+				content = fs.readFileSync filepath , {encoding : "utf-8"}
+				editor.ckeditor.setData content
+				$('#title').val filename
+				editor.current = filepath
 			return false
 
 editor.Catalog = Catalog
-
-

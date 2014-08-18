@@ -1,24 +1,27 @@
 (function() {
-  var ckeditor;
+  var fs;
 
-  ckeditor = CKEDITOR.replace('ckeditor', {});
-
-  ckeditor.on('instanceReady', function(event) {
-    var editor;
-    editor = event.editor;
-    return setTimeout(function() {
-      if (!editor.element) {
-        setTimeout(arguments.callee, 100);
-        return;
-      }
-      event.removeListener('instanceReady', this.callee);
-      debugger;
-      if (editor.name === 'ckeditor') {
-        return editor.resize(editor.container.getStyle('width'), CKEDITOR.document.getById('cke_1_contents').getParent().$.offsetHeight);
-      }
-    }, 0);
-  }, null, null, 9999);
+  fs = require('fs');
 
   new editor.Catalog('#catalog');
+
+  $('#save').on('click', function() {
+    if (editor.current === null) {
+
+    } else {
+      fs.writeFileSync(editor.current, editor.ckeditor.getData());
+      return editor.changed = false;
+    }
+  });
+
+  $('#close').on('click', function() {
+    if (!editor.changed) {
+      editor.current = null;
+      editor.ckeditor.setData('');
+      return $('#title').val('');
+    } else {
+      return alert('has changed');
+    }
+  });
 
 }).call(this);
