@@ -5,7 +5,10 @@
   "main": "app/index.html",
   "window" : {
     "toolbar" : true,
-    "icon" : "app/favicon.ico"
+    "icon" : "app/favicon.ico",
+	"width": 1200,
+	"height": 800,
+	"frame": true
     },
   "toolbar" : "false",
   "devDependencies": {
